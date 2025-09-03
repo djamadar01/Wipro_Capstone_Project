@@ -14,7 +14,7 @@ public class Change_Address {
 	@Given("After login Adddress tab should be open in browser")
 	public void after_login_adddress_tab_should_be_open_in_browser() {
 		driver = new ChromeDriver();
-	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	    driver.get("https://demowebshop.tricentis.com/");
 	    driver.manage().window().maximize();
 		PageClass pg = new PageClass(driver);

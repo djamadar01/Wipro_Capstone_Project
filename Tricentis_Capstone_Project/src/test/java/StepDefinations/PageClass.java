@@ -33,8 +33,8 @@ public class PageClass {
 	By userAddressEmail = By.id("Address_Email");
 	By userCountryList = By.id("Address_CountryId");
 	By userCountry = By.xpath("//*[@id=\"Address_CountryId\"]/option[99]");
-	By userState = By.id("Address_StateProvinceId");
-	By userCity = By.id("Address_City");
+	By userState = By.xpath("//*[@id=\"Address_StateProvinceId\"]");
+	By userCity = By.xpath("//*[@id=\"Address_City\"]");
 	By userAddress1 = By.id("Address_Address1");
 	By userAddress2 = By.id("Address_Address2");
 	By userZipCode = By.id("Address_ZipPostalCode");
@@ -70,6 +70,9 @@ public class PageClass {
     By PaymentInformationContinue = By.xpath("//*[@id=\"payment-info-buttons-container\"]/input");
 	By confirmOrder = By.xpath("//*[@id=\"confirm-order-buttons-container\"]/input");
 	By order = By.xpath("/html/body/div[4]/div[1]/div[4]/div/div/div[2]/div/ul/li[1]");
+	
+	
+	By logoutButton = By.xpath("/html/body/div[4]/div[1]/div[1]/div[2]/div[1]/ul/li[2]/a");
 	public PageClass(WebDriver driver) {
 		this.driver = driver;
 	}
@@ -89,7 +92,7 @@ public class PageClass {
 	}
 	public void email_id() {
 		WebElement mail = driver.findElement(Email);
-		mail.sendKeys("akaqwertw3@mail.com");
+		mail.sendKeys("sanklvcertw3@mail.com");
 		Assert.assertTrue("The specified email already exists",true);
 	}
 	public void Password() {
@@ -109,7 +112,7 @@ public class PageClass {
 		driver.findElement(loginButton).click();
 		WebElement mail_id = driver.findElement(loginEmail);
 		mail_id.click();
-		mail_id.sendKeys("danis3@gmail.com");
+		mail_id.sendKeys("akaqwasanklvcertw3@mail.com");
 		WebElement pass = driver.findElement(loginPassword);
 		pass.click();
 		pass.sendKeys("Pass@123");
@@ -142,9 +145,9 @@ public class PageClass {
 	    
 	    WebElement State = driver.findElement(userState);
 	    State.click();
-		Select sel1 = new Select(State);
-		sel1.selectByVisibleText("Other (Non US)");
-		State.sendKeys(Keys.ENTER);
+//		Select sel1 = new Select(State);
+//		sel1.selectByVisibleText("Other (Non US)");
+//		State.click();
 	    
 	    WebElement address_city = driver.findElement(userCity);
 		address_city.sendKeys("Pune");
@@ -241,4 +244,8 @@ public class PageClass {
 		System.out.println(orderno.getText());
 		System.out.println("Order Placed Sucessfully!!!!!");
 	}	
+	
+	public void userLogout() {
+	    driver.findElement(logoutButton).click();
+	}
 }
