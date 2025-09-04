@@ -34,7 +34,7 @@ public class Registration {
 	@And("Write Your Personal Email ID")
 	public void write_your_personal_email_id() {
 		PageClass pg = new PageClass(driver);
-		String email = "akjkwhc@gmail.com";
+		String email = "akjkwahwqfhdhc@gmail.com";
 		pg.email_id(email);
 	}
 

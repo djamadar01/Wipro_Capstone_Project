@@ -4,6 +4,11 @@
   <artifactId>Tricentis_Capstone_Project</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <dependencies><!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-core -->
+  <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>4.22.0</version>
+    </dependency>
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-core</artifactId>
@@ -35,13 +40,6 @@
     <artifactId>cucumber-testng</artifactId>
     <version>7.27.2</version>
 </dependency>
-<!-- https://mvnrepository.com/artifact/org.testng/testng -->
-<dependency>
-    <groupId>org.testng</groupId>
-    <artifactId>testng</artifactId>
-    <version>7.11.0</version>
-    <scope>test</scope>
-</dependency>
 <dependency>
     <groupId>org.apache.poi</groupId>
     <artifactId>poi</artifactId>
@@ -53,4 +51,18 @@
     <version>5.2.5</version>
 </dependency>
   </dependencies>
+  <build><plugins>
+  <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.5.3</version> <!-- Use a recent, stable version -->
+        <configuration>
+        <useModulePath>false</useModulePath>
+        <includes>
+            <include>**/TestRunner.java</include>
+        </includes>
+        <testNGArtifactName>none:none</testNGArtifactName>
+    </configuration>
+    </plugin></plugins>
+   </build>
 </project>
