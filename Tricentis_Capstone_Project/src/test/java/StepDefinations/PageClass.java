@@ -90,9 +90,9 @@ public class PageClass {
 		WebElement last_name = driver.findElement(Last_name);
 		last_name.sendKeys("Jamadar");
 	}
-	public void email_id() {
+	public void email_id(String email) {
 		WebElement mail = driver.findElement(Email);
-		mail.sendKeys("sanklvcertw3@mail.com");
+		mail.sendKeys(email);
 		Assert.assertTrue("The specified email already exists",true);
 	}
 	public void Password() {

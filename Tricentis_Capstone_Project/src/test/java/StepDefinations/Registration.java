@@ -34,7 +34,8 @@ public class Registration {
 	@And("Write Your Personal Email ID")
 	public void write_your_personal_email_id() {
 		PageClass pg = new PageClass(driver);
-		pg.email_id();
+		String email = "akjkwhc@gmail.com";
+		pg.email_id(email);
 	}
 
 	@And("Create new unique Password in Password field and Write same password in confirm Password Field")
