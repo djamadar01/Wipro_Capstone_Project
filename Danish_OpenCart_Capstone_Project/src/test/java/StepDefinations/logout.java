@@ -17,7 +17,7 @@ public class logout {
 		driver = new ChromeDriver();
 		driver.get("https://tutorialsninja.com/demo/");
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		PageClass pg = new PageClass(driver);
 		pg.login();
 	}
@@ -25,6 +25,7 @@ public class logout {
 	@When("Go to myaccount and click on logout button")
 	public void go_to_myaccount_and_click_on_logout_button() {
 		PageClass pg = new PageClass(driver);
+		pg.logout();
 
 	}
 
