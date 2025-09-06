@@ -1,6 +1,5 @@
 package StepDefinations;
 
-import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,15 +14,14 @@ public class register {
 	@Given("Registration Webpage Open on browser")
 	public void registration_webpage_open_on_browser() {
 		driver = new ChromeDriver();
-		driver.get("https://tutorialsninja.com/demo/");
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		PageClass pg = new PageClass(driver);
+		pg.wepage();
 	}
 
-	@When("FIll all deatils told")
-	public void f_ill_all_deatils_told() {
+	@When("Fill (.*) and (.*) and (.*) and (.*) and (.*) and (.*)$")
+	public void fill_first_name_last_name_email_mb_number_password_confirm_password(String FirstName, String LastName, String Email, String MBNumber, String Password, String ConfirmPassword) {
 		PageClass pg = new PageClass(driver);
-		pg.register("Danish", "Jamadar", "amdpawib1@gmail.com", "9763060269", "Pass@123", "Pass@123");
+		pg.register(FirstName,LastName,Email,MBNumber,Password,ConfirmPassword);
 	}
 
 	@Then("Registration Done")

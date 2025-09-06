@@ -1,6 +1,5 @@
 package StepDefinations;
 
-import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,9 +13,9 @@ public class Shopbycurrency {
 	@Given("Home Page Should be Present")
 	public void home_page_should_be_present() {
 		driver = new ChromeDriver();
-		driver.get("https://tutorialsninja.com/demo/");
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+		PageClass pg = new PageClass(driver);
+		pg.wepage();
 	}
 
 	@When("Click on currency and use US Dollar")

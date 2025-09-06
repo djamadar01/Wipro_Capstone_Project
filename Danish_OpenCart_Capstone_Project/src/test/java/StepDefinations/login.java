@@ -15,9 +15,9 @@ public class login {
 	@Given("Open login page")
 	public void open_login_page() {
 		driver = new ChromeDriver();
-		driver.get("https://tutorialsninja.com/demo/");
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+		PageClass pg = new PageClass(driver);
+		pg.wepage();
 	}
 
 	@When("^Add Email and password from (.*) and (.*)$")

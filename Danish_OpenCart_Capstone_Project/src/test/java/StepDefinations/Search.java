@@ -1,8 +1,8 @@
 package StepDefinations;
-import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
 import io.cucumber.java.en.*;
 
 public class Search {
@@ -10,9 +10,9 @@ public class Search {
 	@Given("home page should be open in browser")
 	public void home_page_should_be_open_in_browser() {
 		driver = new ChromeDriver();
-		driver.get("https://tutorialsninja.com/demo/");
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+		PageClass pg = new PageClass(driver);
+		pg.wepage();
 	}
 
 	@When("click on search button and perform search")
