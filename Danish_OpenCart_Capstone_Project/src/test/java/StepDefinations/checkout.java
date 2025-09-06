@@ -17,7 +17,7 @@ public class checkout {
 		driver = new ChromeDriver();
 		driver.get("https://tutorialsninja.com/demo/");
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		PageClass pg = new PageClass(driver);
 		pg.login();
 	}

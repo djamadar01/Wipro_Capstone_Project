@@ -23,7 +23,7 @@ public class register {
 	@When("FIll all deatils told")
 	public void f_ill_all_deatils_told() {
 		PageClass pg = new PageClass(driver);
-		pg.register("Danish", "Jamadar", "qpfgghdssh1@gmail.com", "9763060269", "Pass@123", "Pass@123");
+		pg.register("Danish", "Jamadar", "amdlaib1@gmail.com", "9763060269", "Pass@123", "Pass@123");
 	}
 
 	@Then("Registration Done")

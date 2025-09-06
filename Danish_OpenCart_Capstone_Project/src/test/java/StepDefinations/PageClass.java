@@ -103,7 +103,7 @@ public class PageClass {
 	public void login() {
 		driver.findElement(myAccountButton).click();
 		driver.findElement(loginButton).click();
-		driver.findElement(emailField).sendKeys("qpfgghdssh1@gmail.com");
+		driver.findElement(emailField).sendKeys("amdlaib1@gmail.com");
 		driver.findElement(passwordField).sendKeys("Pass@123");
 		driver.findElement(loginBtn).click();
 		driver.findElement(homeIcon).click();
